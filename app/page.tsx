@@ -56,6 +56,7 @@ const ServerSideGrid = () => {
       });
   }, []);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const getRowId = useCallback((params: any) => params.data.nItemID, []);
 
   return (
