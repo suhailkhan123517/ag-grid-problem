@@ -1,6 +1,25 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+
+import { ModuleRegistry } from "ag-grid-community";
+import {
+  ClientSideRowModelModule,
+  EnterpriseCoreModule,
+  ColumnsToolPanelModule,
+  FiltersToolPanelModule,
+  SideBarModule,
+} from "ag-grid-enterprise";
+
+ModuleRegistry.registerModules([
+  EnterpriseCoreModule,
+  ClientSideRowModelModule,
+  ColumnsToolPanelModule,
+  FiltersToolPanelModule,
+  SideBarModule,
+]);
+
 import "./globals.css";
+import AgGridWrapper from "@/components/ag-grid-wrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +46,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <AgGridWrapper>
+          <div className="p-5">{children}</div>
+        </AgGridWrapper>
       </body>
     </html>
   );

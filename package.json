@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "ag-grid-community": "32.3.3",
+    "ag-grid-enterprise": "32.3.3",
+    "ag-grid-react": "32.3.3",
+    "next": "15.2.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.2.1"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "typescript": "^5",
