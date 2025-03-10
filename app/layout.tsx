@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { ModuleRegistry } from "ag-grid-community";
 import {
   ClientSideRowModelModule,
@@ -46,9 +46,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <AgGridWrapper>
-          <div className="p-5">{children}</div>
-        </AgGridWrapper>
+        <NuqsAdapter>
+          <AgGridWrapper>
+            <div className="p-5">{children}</div>
+          </AgGridWrapper>
+        </NuqsAdapter>
       </body>
     </html>
   );
