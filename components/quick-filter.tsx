@@ -1,26 +1,21 @@
-"use client";
-
-import { SearchIcon } from "lucide-react";
-
+import React from "react";
+import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
 interface QuickFilterProps {
   onInput: () => void;
 }
 
-export const QuickFilter = ({ onInput }: QuickFilterProps) => {
+export const QuickFilter: React.FC<QuickFilterProps> = ({ onInput }) => {
   return (
-    <>
-      <div className="relative">
-        <SearchIcon className="size-4 absolute top-[10px] left-2" />
-        <Input
-          type="text"
-          id="input-quick-filter"
-          onInput={onInput}
-          className="border py-1 rounded-md pl-8  w-[200px] md:w-[250px] bg-background text-xs md:text-sm"
-          placeholder="Quick filter anywhere..."
-        />
-      </div>
-    </>
+    <div className="relative w-96">
+      <Search className="h-4 w-4 absolute left-2 top-3 text-gray-500" />
+      <Input
+        id="input-quick-filter"
+        placeholder="Search anything..."
+        className="pl-8"
+        onInput={onInput}
+      />
+    </div>
   );
 };
